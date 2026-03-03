@@ -1,376 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hat over Hate | Artistic Community Connection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --neon-pink: #ff00ff;
-            --neon-blue: #00ffff;
-            --neon-green: #39ff14;
-            --electric-purple: #9d00ff;
-            --dark-bg: #0a0a0a;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hat over Hate | Artistic Community Connection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-pink: #ff00ff;
+      --neon-blue: #00ffff;
+      --neon-green: #39ff14;
+      --electric-purple: #9d00ff;
+      --dark-bg: #0a0a0a;
+      --white: #ffffff;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--white);
-            font-family: 'Outfit', sans-serif;
-            font-size: 24px;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    body {
+      background-color: var(--dark-bg);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        .symbol-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-            pointer-events: none;
-            overflow: hidden;
-        }
+    .symbol-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-        .floating-art {
-            position: absolute;
-            font-family: 'Bungee', cursive;
-            font-size: 15rem;
-            color: var(--neon-pink);
-            filter: blur(10px);
-            animation: float 20s infinite linear;
-        }
+    .floating-art {
+      position: absolute;
+      font-family: 'Bungee', cursive;
+      font-size: 15rem;
+      color: var(--neon-pink);
+      filter: blur(10px);
+      animation: float 20s infinite linear;
+    }
 
-        @keyframes float {
-            from { transform: rotate(0deg) translate(100px) rotate(0deg); }
-            to { transform: rotate(360deg) translate(100px) rotate(-360deg); }
-        }
+    @keyframes float {
+      from { transform: rotate(0deg) translate(100px) rotate(0deg); }
+      to { transform: rotate(360deg) translate(100px) rotate(-360deg); }
+    }
 
-        nav {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid var(--neon-blue);
-            background: rgba(10, 10, 10, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    nav {
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid var(--neon-blue);
+      background: rgba(10, 10, 10, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .nav-logo {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 3rem;
-            color: var(--neon-green);
-            text-decoration: none;
-            text-shadow: 0 0 10px var(--neon-green);
-        }
+    .nav-logo {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 3rem;
+      color: var(--neon-green);
+      text-decoration: none;
+      text-shadow: 0 0 10px var(--neon-green);
+    }
 
-        .nav-logo span { color: var(--neon-pink); }
+    .nav-logo span { color: var(--neon-pink); }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
 
-        nav a:hover {
-            color: var(--neon-blue);
-            text-shadow: 0 0 15px var(--neon-blue);
-        }
+    nav a:hover {
+      color: var(--neon-blue);
+      text-shadow: 0 0 15px var(--neon-blue);
+    }
 
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
-        }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+    }
 
-        .symbol-hero {
-            font-family: 'Bungee', cursive;
-            font-size: 8rem;
-            line-height: 1;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
-        }
+    .symbol-hero {
+      font-family: 'Bungee', cursive;
+      font-size: 8rem;
+      line-height: 1;
+      margin-bottom: 2rem;
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+    }
 
-        h1 {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 6rem;
-            margin-bottom: 2rem;
-            color: var(--white);
-        }
+    h1 {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 6rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+    }
 
-        .hero-subtext {
-            font-size: 2rem;
-            max-width: 900px;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
+    .hero-subtext {
+      font-size: 2rem;
+      max-width: 900px;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
 
-        .btn {
-            background: var(--neon-pink);
-            color: black;
-            padding: 1.5rem 4rem;
-            font-size: 2rem;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 100px;
-            text-transform: uppercase;
-            box-shadow: 0 0 30px var(--neon-pink);
-            transition: 0.3s;
-        }
+    .btn {
+      background: var(--neon-pink);
+      color: black;
+      padding: 1.5rem 4rem;
+      font-size: 2rem;
+      font-weight: 900;
+      text-decoration: none;
+      border-radius: 100px;
+      text-transform: uppercase;
+      box-shadow: 0 0 30px var(--neon-pink);
+      transition: 0.3s;
+    }
 
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 50px var(--neon-pink);
-            background: var(--white);
-        }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 50px var(--neon-pink);
+      background: var(--white);
+    }
 
-        section {
-            padding: 8rem 10%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    section {
+      padding: 8rem 10%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-        h2 {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 5rem;
-            margin-bottom: 4rem;
-            color: var(--neon-blue);
-            text-shadow: 0 0 20px var(--neon-blue);
-        }
+    h2 {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 5rem;
+      margin-bottom: 4rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 20px var(--neon-blue);
+    }
 
-        .art-box {
-            border: 8px solid var(--neon-green);
-            padding: 4rem;
-            border-radius: 40px;
-            background: rgba(57, 255, 20, 0.05);
-            margin-bottom: 4rem;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
-        }
+    .art-box {
+      border: 8px solid var(--neon-green);
+      padding: 4rem;
+      border-radius: 40px;
+      background: rgba(57, 255, 20, 0.05);
+      margin-bottom: 4rem;
+      box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
+    }
 
-        .mission-text p {
-            margin-bottom: 2.5rem;
-            font-size: 2rem;
-        }
+    .mission-text p {
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+    }
 
-        .quote-box {
-            border-left: 15px solid var(--neon-pink);
-            padding-left: 3rem;
-            margin: 5rem 0;
-            font-family: 'Permanent Marker', cursive;
-            font-size: 3.5rem;
-            color: var(--neon-pink);
-        }
+    .quote-box {
+      border-left: 15px solid var(--neon-pink);
+      padding-left: 3rem;
+      margin: 5rem 0;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 3.5rem;
+      color: var(--neon-pink);
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 4rem;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 4rem;
+    }
 
-        .card {
-            background: #111;
-            padding: 3rem;
-            border-radius: 30px;
-            border: 4px solid var(--neon-blue);
-            transition: 0.3s;
-        }
+    .card {
+      background: #111;
+      padding: 3rem;
+      border-radius: 30px;
+      border: 4px solid var(--neon-blue);
+      transition: 0.3s;
+    }
 
-        .card:hover {
-            transform: translateY(-20px);
-            border-color: var(--neon-pink);
-            box-shadow: 0 20px 50px rgba(255, 0, 255, 0.2);
-        }
+    .card:hover {
+      transform: translateY(-20px);
+      border-color: var(--neon-pink);
+      box-shadow: 0 20px 50px rgba(255, 0, 255, 0.2);
+    }
 
-        .card h3 {
-            font-family: 'Bungee', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--neon-green);
-        }
+    .card h3 {
+      font-family: 'Bungee', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--neon-green);
+    }
 
-        .card-num {
-            font-size: 4rem;
-            font-weight: 900;
-            opacity: 0.2;
-            display: block;
-        }
+    .card-num {
+      font-size: 4rem;
+      font-weight: 900;
+      opacity: 0.2;
+      display: block;
+    }
 
-        .neon-list {
-            list-style: none;
-            margin-top: 3rem;
-        }
+    .suggestion-container {
+      margin-top: 4rem;
+      border: 4px dashed var(--neon-pink);
+      padding: 3rem;
+      border-radius: 30px;
+      background: rgba(255, 0, 255, 0.05);
+    }
 
-        .neon-list li {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            padding-left: 4rem;
-            position: relative;
-        }
+    .suggestion-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
-        .neon-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            color: var(--neon-pink);
-            font-size: 2.5rem;
-        }
+    .suggestion-form textarea {
+      background: #1a1a1a;
+      border: 2px solid var(--neon-blue);
+      color: var(--white);
+      padding: 1.5rem;
+      border-radius: 15px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      min-height: 150px;
+      resize: vertical;
+    }
 
-        #contact {
-            text-align: center;
-            background: linear-gradient(180deg, var(--dark-bg) 0%, #111 100%);
-            padding: 10rem 5%;
-            border-top: 10px solid var(--neon-pink);
-        }
+    .suggestion-form button {
+      background: var(--neon-green);
+      color: black;
+      border: none;
+      padding: 1rem 3rem;
+      font-family: 'Bungee', cursive;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 20px var(--neon-green);
+    }
 
-        .email-btn {
-            font-size: 3rem;
-            color: var(--neon-blue);
-            text-decoration: none;
-            font-family: 'Permanent Marker', cursive;
-            display: block;
-            margin-top: 2rem;
-        }
+    .suggestion-form button:hover {
+      transform: scale(1.05);
+      background: var(--white);
+    }
 
-        .email-btn:hover {
-            color: var(--neon-green);
-            text-shadow: 0 0 30px var(--neon-green);
-        }
+    #contact {
+      text-align: center;
+      background: linear-gradient(180deg, var(--dark-bg) 0%, #111 100%);
+      padding: 10rem 5%;
+      border-top: 10px solid var(--neon-pink);
+    }
 
-        footer {
-            padding: 5rem;
-            text-align: center;
-            border-top: 2px solid #333;
-            font-size: 1.5rem;
-        }
+    .email-btn {
+      font-size: 3rem;
+      color: var(--neon-blue);
+      text-decoration: none;
+      font-family: 'Permanent Marker', cursive;
+      display: block;
+      margin-top: 2rem;
+    }
 
-        @media (max-width: 800px) {
-            h1 { font-size: 4rem; }
-            h2 { font-size: 3.5rem; }
-            .symbol-hero { font-size: 5rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    .email-btn:hover {
+      color: var(--neon-green);
+      text-shadow: 0 0 30px var(--neon-green);
+    }
+
+    footer {
+      padding: 5rem;
+      text-align: center;
+      border-top: 2px solid #333;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 800px) {
+      h1 { font-size: 4rem; }
+      h2 { font-size: 3.5rem; }
+      .symbol-hero { font-size: 5rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="symbol-bg">
-        <div class="floating-art" style="top: 10%; left: 10%;">H@</div>
-        <div class="floating-art" style="top: 60%; right: 10%; color: var(--neon-blue);">H8</div>
-        <div class="floating-art" style="bottom: 10%; left: 30%; color: var(--neon-green);">H@</div>
+  <div class="symbol-bg">
+    <div class="floating-art" style="top: 10%; left: 5%;">H@</div>
+    <div class="floating-art" style="top: 60%; right: 5%; animation-delay: -5s; color: var(--neon-blue);">H8</div>
+    <div class="floating-art" style="top: 80%; left: 20%; animation-delay: -10s; color: var(--neon-green);">H@</div>
+  </div>
+
+  <nav>
+    <a href="#" class="nav-logo">H<span>@</span> over H<span>8</span></a>
+    <ul>
+      <li><a href="#mission">STORY</a></li>
+      <li><a href="#how">ART</a></li>
+      <li><a href="#rules">RULES</a></li>
+      <li><a href="#contact">TALK</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="symbol-hero">H@ / H8</div>
+    <h1>HAT OVER HATE</h1>
+    <p class="hero-subtext">Hand-painted conversation starters. Hand-crafted community connections. Made with love in Ferndale, WA.</p>
+    <a href="#mission" class="btn">Learn Why</a>
+  </header>
+
+  <section id="mission">
+    <h2>THE STORY</h2>
+    <div class="art-box mission-text">
+      <p>Hey, I'm <strong>Tana</strong>. I'm an artist who believes that a simple hat can change the world—or at least, our little corner of it in Ferndale.</p>
+      <p>I can't donate thousands of dollars, but I can paint. And I believe that if we start talking to each other again, we can stop the hate and find our community.</p>
+      <div class="quote-box">"Finding common ground is the first step toward a better world."</div>
+      <p>Every hat I make is an invitation to listen, to learn about civics, to understand our local elections, and to care for our neighbors.</p>
     </div>
+  </section>
 
-    <nav>
-        <a href="#" class="nav-logo">H@<span> over </span>H8</a>
-        <ul>
-            <li><a href="#mission">STORY</a></li>
-            <li><a href="#how">ART</a></li>
-            <li><a href="#rules">RULES</a></li>
-            <li><a href="#contact">TALK</a></li>
+  <section id="how">
+    <h2>HOW IT WORKS</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="card-num">01</span>
+        <h3>HAND-PAINTED</h3>
+        <p>Each hat is a unique work of art, hand-painted in vibrant colors to catch the eye and start a spark.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">02</span>
+        <h3>INSIDE QUESTIONS</h3>
+        <p>Hidden inside the brim are questions to help you veer conversations into things that actually matter.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">03</span>
+        <h3>THE RULES</h3>
+        <p>Every hat comes with rules for respectful, calm, and curious engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <h2>INSIDE THE BRIM</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>CURRENT QUESTIONS</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 1rem;">✦ What matters to your community?</li>
+          <li style="margin-bottom: 1rem;">✦ What is a local issue you'd solve?</li>
+          <li style="margin-bottom: 1rem;">✦ How can we support neighbors?</li>
         </ul>
-    </nav>
 
-    <header>
-        <div class="symbol-hero">H@ / H8</div>
-        <h1>HAT OVER HATE</h1>
-        <p class="hero-subtext">Hand-painted conversation starters. Hand-crafted community connections. Made with love in Ferndale, WA.</p>
-        <a href="#mission" class="btn">Learn Why</a>
-    </header>
-
-    <section id="mission">
-        <h2>THE STORY</h2>
-        <div class="art-box">
-            <div class="mission-text">
-                <p>Hey, I'm <strong>Tana</strong>. I'm an artist who believes that a simple hat can change the world—or at least, our little corner of it in Ferndale.</p>
-                <p>I can't donate thousands of dollars, but I can paint. And I believe that if we start talking to each other again, we can stop the hate and find our community.</p>
-            </div>
-            <div class="quote-box">
-                "Finding common ground is the first step toward a better world."
-            </div>
-            <p>Every hat I make is an invitation to listen, to learn about civics, to understand our local elections, and to care for our neighbors.</p>
+        <div class="suggestion-container">
+          <h3 style="color: var(--neon-pink);">SUGGEST A QUESTION</h3>
+          <p style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--neon-blue);">Have a better conversation starter? Send it to Tana!</p>
+          <form class="suggestion-form" action="https://formspree.io/f/mqaejvyj" method="POST">
+            <textarea name="suggestion" placeholder="Write your question here..." required></textarea>
+            <button type="submit">SEND TO TANA</button>
+          </form>
         </div>
-    </section>
+      </div>
+      
+      <div class="card">
+        <h3>THE RULES</h3>
+        <ul class="neon-list" style="margin-top: 0;">
+          <li>Listen to understand.</li>
+          <li>Stay calmly curious.</li>
+          <li>Seek what connects us.</li>
+          <li>Respect the person.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <section id="how">
-        <h2>HOW IT WORKS</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="card-num">01</span>
-                <h3>HAND-PAINTED</h3>
-                <p>Each hat is a unique work of art, hand-painted in vibrant colors to catch the eye and start a spark.</p>
-            </div>
-            <div class="card">
-                <span class="card-num">02</span>
-                <h3>INSIDE QUESTIONS</h3>
-                <p>Hidden inside the brim are questions to help you veer conversations into things that actually matter.</p>
-            </div>
-            <div class="card">
-                <span class="card-num">03</span>
-                <h3>THE RULES</h3>
-                <p>Every hat comes with rules for respectful, calm, and curious engagement.</p>
-            </div>
-        </div>
-    </section>
+  <section id="contact">
+    <h2>LET'S CONNECT</h2>
+    <p>I want to work with Ferndale businesses and programs. Let's teach our kids about civics and our community.</p>
+    <a href="mailto:tana.hatoverhate@gmail.com" class="email-btn">tana.hatoverhate@gmail.com</a>
+  </section>
 
-    <section id="rules">
-        <h2>INSIDE THE BRIM</h2>
-        <div class="grid">
-            <div>
-                <ul class="neon-list">
-                    <li>What matters to your community?</li>
-                    <li>What is a local issue you'd solve?</li>
-                    <li>How can we support neighbors?</li>
-                </ul>
-            </div>
-            <div class="art-box" style="border-color: var(--neon-blue);">
-                <h3>THE RULES</h3>
-                <ul class="neon-list">
-                    <li>Listen to understand.</li>
-                    <li>Stay calmly curious.</li>
-                    <li>Seek what connects us.</li>
-                    <li>Respect the person.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>LET'S CONNECT</h2>
-        <p>I want to work with Ferndale businesses and programs. Let's teach our kids about civics and our community.</p>
-        <a href="mailto:tana.hatoverhate@gmail.com" class="email-btn">tana.hatoverhate@gmail.com</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Hat over Hate. Hand-painted by Tana in Ferndale, WA.</p>
-        <p style="color: var(--neon-pink); font-weight: 900; margin-top: 1rem;">BRIGHT. COLORFUL. JOYFUL. ART.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2026 Hat over Hate. Hand-painted by Tana in Ferndale, WA.</p>
+    <p style="margin-top: 1rem; color: var(--neon-pink); font-family: 'Permanent Marker';">BRIGHT. COLORFUL. JOYFUL. ART.</p>
+  </footer>
 
 </body>
 </html>
