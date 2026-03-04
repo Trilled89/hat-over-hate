@@ -4,364 +4,300 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hat over Hate | Artistic Community Connection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Outfit:wght@300;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --neon-pink: #ff00ff;
             --neon-blue: #00ffff;
             --neon-green: #39ff14;
-            --electric-purple: #9d00ff;
             --dark-bg: #0a0a0a;
             --white: #ffffff;
+            --panel-bg: #111;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background-color: var(--dark-bg);
             color: var(--white);
             font-family: 'Outfit', sans-serif;
-            font-size: 1.2rem;
             line-height: 1.6;
             overflow-x: hidden;
         }
-        .symbol-bg {
+
+        /* Fixed Navigation */
+        nav {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .floating-art {
-            position: absolute;
-            font-family: 'Bungee', cursive;
-            font-size: 15rem;
-            color: var(--neon-pink);
-            filter: blur(10px);
-            animation: float 20s infinite linear;
-        }
-        @keyframes float {
-            from { transform: rotate(0deg) translate(100px) rotate(0deg); }
-            to { transform: rotate(360deg) translate(100px) rotate(-360deg); }
-        }
-        @keyframes pulse {
-            0% { text-shadow: 0 0 10px var(--neon-pink); }
-            50% { text-shadow: 0 0 25px var(--neon-pink), 0 0 40px var(--neon-blue); }
-            100% { text-shadow: 0 0 10px var(--neon-pink); }
-        }
-        nav {
-            padding: 1rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--neon-blue);
             background: rgba(10, 10, 10, 0.95);
-            position: sticky;
-            top: 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--neon-blue);
             z-index: 1000;
         }
+
         .nav-logo {
             font-family: 'Permanent Marker', cursive;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--neon-green);
             text-decoration: none;
-            text-shadow: 0 0 10px var(--neon-green);
         }
-        .nav-logo span { color: var(--neon-pink); animation: pulse 3s infinite; }
+
         nav ul {
             display: flex;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
+
         nav a {
             text-decoration: none;
             color: var(--white);
             font-weight: 900;
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
+
         nav a:hover {
             color: var(--neon-blue);
-            text-shadow: 0 0 15px var(--neon-blue);
         }
-        header {
-            min-height: 90vh;
+
+        /* Layout System */
+        section {
+            padding: 8rem 10%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Bungee', cursive;
+            color: var(--neon-pink);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--neon-green);
+            margin: 2rem 0;
+        }
+
+        /* Hero - Left Anchored */
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            padding-top: 5rem;
         }
-        .symbol-hero {
+
+        .hero h1 {
             font-family: 'Bungee', cursive;
-            font-size: clamp(4rem, 15vw, 10rem);
-            line-height: 1;
+            font-size: clamp(4rem, 12vw, 10rem);
+            line-height: 0.9;
             margin-bottom: 2rem;
-            background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+            text-transform: uppercase;
         }
-        h1 {
-            font-family: 'Permanent Marker', cursive;
-            font-size: clamp(3rem, 10vw, 6rem);
-            margin-bottom: 2rem;
-            color: var(--white);
-        }
-        .hero-subtext {
+
+        .hero-subtitle {
             font-size: 1.5rem;
-            max-width: 800px;
+            max-width: 500px;
+            font-weight: 300;
             margin-bottom: 3rem;
+        }
+
+        /* Story - 2 Column Grid */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .story-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
             font-weight: 300;
         }
-        .btn {
-            background: var(--neon-pink);
-            color: black;
-            padding: 1rem 3rem;
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 100px;
-            text-transform: uppercase;
-            box-shadow: 0 0 30px var(--neon-pink);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px var(--neon-pink);
-            background: var(--white);
-        }
-        section {
-            padding: 6rem 10%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        h2 {
+
+        .pull-quote {
             font-family: 'Permanent Marker', cursive;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin-bottom: 3rem;
-            color: var(--neon-blue);
-            text-shadow: 0 0 20px var(--neon-blue);
-        }
-        .art-box {
-            border: 6px solid var(--neon-green);
-            padding: 3rem;
-            border-radius: 40px;
-            background: rgba(57, 255, 20, 0.05);
-            margin-bottom: 4rem;
-            box-shadow: 0 0 40px rgba(57, 255, 20, 0.1);
-        }
-        .mission-text p {
-            margin-bottom: 2rem;
-            font-size: 1.4rem;
-        }
-        .quote-box {
-            border-left: 10px solid var(--neon-pink);
-            padding-left: 2rem;
-            margin: 4rem 0;
-            font-family: 'Permanent Marker', cursive;
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2rem, 4vw, 3.5rem);
             color: var(--neon-pink);
-            line-height: 1.2;
+            line-height: 1.1;
+            padding: 2rem;
+            border: 4px solid var(--neon-pink);
+            border-radius: 30px;
+            transform: rotate(2deg);
         }
-        .grid {
+
+        /* Pillar Grid */
+        .pillar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .pillar h3 {
+            font-family: 'Bungee', cursive;
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Collection Grid */
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-        .card {
-            background: #111;
-            padding: 2.5rem;
-            border-radius: 30px;
-            border: 3px solid var(--neon-blue);
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--neon-pink);
-            box-shadow: 0 20px 50px rgba(255, 0, 255, 0.2);
-        }
-        .card h3 {
-            font-family: 'Bungee', cursive;
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
-            color: var(--neon-green);
-        }
-        .hat-placeholder {
-            aspect-ratio: 1;
-            background: #222;
-            border: 2px dashed #444;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
+
+        .hat-card {
+            background: var(--panel-bg);
+            padding: 2rem;
             border-radius: 20px;
+            border: 2px solid #222;
+        }
+
+        .hat-card h4 {
             font-family: 'Bungee', cursive;
-            color: #444;
-        }
-        #support {
-            background: linear-gradient(45deg, #111, #000);
-            border: 8px solid var(--neon-pink);
-            border-radius: 50px;
-            padding: 4rem;
-            text-align: center;
-        }
-        .support-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            text-align: left;
-            margin-top: 3rem;
-        }
-        #contact {
-            text-align: center;
-            background: linear-gradient(180deg, var(--dark-bg) 0%, #111 100%);
-            padding: 8rem 5%;
-            border-top: 8px solid var(--neon-pink);
-        }
-        .email-btn {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            color: var(--neon-blue);
-            text-decoration: none;
-            font-family: 'Permanent Marker', cursive;
-            display: block;
-            margin-top: 2rem;
-        }
-        .email-btn:hover {
+            margin: 1rem 0;
             color: var(--neon-green);
-            text-shadow: 0 0 30px var(--neon-green);
         }
-        footer {
-            padding: 4rem;
-            text-align: center;
-            border-top: 1px solid #333;
-            font-size: 1.1rem;
+
+        /* Support Panel */
+        .support-layout {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
         }
-        strong { color: var(--neon-pink); }
-        @media (max-width: 900px) {
-            .support-grid { grid-template-columns: 1fr; }
+
+        .aside-panel {
+            background: rgba(255, 0, 255, 0.05);
+            padding: 3rem;
+            border-radius: 40px;
+            border: 2px solid var(--neon-pink);
+        }
+
+        .cta-btn {
+            background: var(--neon-pink);
+            color: black;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 100px;
+            display: inline-block;
+            margin-top: 2rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+        }
+
+        @media (max-width: 1000px) {
+            .story-grid, .pillar-grid, .collection-grid, .support-layout {
+                grid-template-columns: 1fr;
+            }
+            .pull-quote { transform: none; }
             nav ul { display: none; }
         }
     </style>
 </head>
 <body>
-    <div class="symbol-bg">
-        <div class="floating-art" style="top: 10%; left: 10%;">H@</div>
-        <div class="floating-art" style="top: 60%; right: 10%; color: var(--neon-blue);">H8</div>
-        <div class="floating-art" style="bottom: 10%; left: 30%; color: var(--neon-green);">H@</div>
+
+<nav>
+    <a href="#" class="nav-logo">H@ OVER H8</a>
+    <ul>
+        <li><a href="#why">Why</a></li>
+        <li><a href="#voice">Voice</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#help">Help</a></li>
+        <li><a href="mailto:tana.hatoverhate@gmail.com">Talk</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Hat Over<br><span style="color: var(--neon-blue)">Hate</span></h1>
+    <p class="hero-subtitle">Not a movement—just a catalyst. Supporting Whatcom County one hand-painted conversation at a time.</p>
+    <div class="divider"></div>
+</section>
+
+<section id="why">
+    <span class="section-label">The Story</span>
+    <div class="story-grid">
+        <div class="story-content">
+            <p>Hey, I'm <strong>Tana</strong>. I'm an artist in Ferndale, and I believe that if we can just find community and care about each other, we can stop the polarization.</p>
+            <p>I can't donate money to the movements already doing good work in Whatcom County, but I can paint. I'm not trying to start a movement—I'm trying to be a <strong>catalyst</strong> for the ones already running.</p>
+        </div>
+        <div class="pull-quote">
+            "It’s about going out, having those difficult conversations, and being the one who listens."
+        </div>
     </div>
+</section>
 
-    <nav>
-        <a href="#" class="nav-logo">H@<span> over </span>H8</a>
-        <ul>
-            <li><a href="#mission">WHY</a></li>
-            <li><a href="#philosophy">VOICE</a></li>
-            <li><a href="#collection">COLLECTION</a></li>
-            <li><a href="#support">HELP</a></li>
-            <li><a href="#contact">TALK</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <div class="symbol-hero">H@ / H8</div>
-        <h1>HAT OVER HATE</h1>
-        <p class="hero-subtext">Not a movement—just an additive. Supporting Whatcom County one hand-painted conversation at a time.</p>
-        <a href="#mission" class="btn">Hear My Heart</a>
-    </header>
-
-    <section id="mission">
-        <h2>THE STORY</h2>
-        <div class="art-box">
-            <div class="mission-text">
-                <p>Hey, I'm <strong>Tana</strong>. I'm an artist in Ferndale, and I believe that if we can just find community and care about each other, we can stop the polarization.</p>
-                <p>I can't donate money to the movements already doing good work in Whatcom County, but I can paint. I believe <strong>Hat over Hate</strong> is a way for me to lend myself to the issues of today—to the butterfly effect of a single conversation.</p>
-            </div>
-            <div class="quote-box">
-                "It’s about going out, having those difficult conversations, and being the one who listens."
-            </div>
-            <p>I'm not trying to start a movement—I'm trying to be an additive to the ones already running. It's about finding common ground so we can help our children and our community.</p>
+<section id="voice">
+    <span class="section-label">Philosophy</span>
+    <div class="pillar-grid">
+        <div class="pillar">
+            <h3>Stubbornness vs. Listening</h3>
+            <p>People are so divided now. I enjoy hearing both sides because I know beliefs have a source—families, grandmas, history.</p>
         </div>
-    </section>
-
-    <section id="philosophy">
-        <h2>WHY CONVERSATION?</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>STUBBORNNESS VS. LISTENING</h3>
-                <p>People are so divided now, just trying to prove their point or sticking to their pride. I enjoy hearing both sides because I know beliefs have a source—families, grandmas, history.</p>
-            </div>
-            <div class="card">
-                <h3>REALIZING THE TRUTH</h3>
-                <p>I had to realize things on my own, not because someone taught me, but because someone <strong>listened</strong> to me. That's the power I want to share.</p>
-            </div>
-            <div class="card">
-                <h3>KNOWING OUR NEIGHBORS</h3>
-                <p>It’s hard for me to talk on the phone, even to family. It's hard to acknowledge neighbors beyond a wave. But I worry for them every day. We need to get back to truly talking.</p>
-            </div>
-            <div class="card">
-                <h3>THE POWER OF THE "LITTLE VOTE"</h3>
-                <p>I didn't care about civics until the world started to change. We need realistic education. We need to understand how the little votes turn into the bigger ones that change our world.</p>
-            </div>
+        <div class="pillar">
+            <h3>Realizing the Truth</h3>
+            <p>I had to realize things on my own, not because someone taught me, but because someone <strong>listened</strong> to me.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="collection">
-        <h2>THE COLLECTION</h2>
-        <p style="margin-bottom: 3rem; font-size: 1.4rem;">Each hat is hand-painted in Ferndale, designed to be a conversation starter. Here are some of the latest pieces appearing in Whatcom County.</p>
-        <div class="grid">
-            <div class="card">
-                <div class="hat-placeholder">HAT #1</div>
-                <h3>NEON DIALOGUE</h3>
-                <p>A burst of color representing the vibrance of a first meeting.</p>
-            </div>
-            <div class="card">
-                <div class="hat-placeholder">HAT #2</div>
-                <h3>FERNDALE FOCUS</h3>
-                <p>Inspired by the local landscape and the bridges we build.</p>
-            </div>
-            <div class="card">
-                <div class="hat-placeholder">HAT #3</div>
-                <h3>THE LISTENER</h3>
-                <p>Subtle patterns that speak louder than words.</p>
-            </div>
+<section id="collection">
+    <span class="section-label">Collection</span>
+    <div class="collection-grid">
+        <div class="hat-card">
+            <div style="height:200px; background:#222; border-radius:15px;"></div>
+            <h4>Neon Dialogue</h4>
+            <p>A burst of color representing the vibrance of a first meeting.</p>
         </div>
-    </section>
-
-    <section id="support">
-        <h2>SUPPORT THE ART</h2>
-        <div class="support-grid">
-            <div>
-                <h3>HELP ME SOURCE HATS</h3>
-                <p>I need more than six hats to make an impression. To keep painting and connecting, I need to source hats and paint.</p>
-                <p>Paint is expensive, and while I have some, I need finances to keep this additive running. Every dollar goes directly into materials for the community.</p>
-            </div>
-            <div class="art-box" style="margin-bottom: 0;">
-                <h3>HOW TO HELP</h3>
-                <p>If you can help source hats, donate paint, or provide funding for supplies, please reach out.</p>
-                <a href="#contact" class="btn" style="margin-top: 2rem;">Help Source Supplies</a>
-            </div>
+        <div class="hat-card">
+            <div style="height:200px; background:#222; border-radius:15px;"></div>
+            <h4>Ferndale Focus</h4>
+            <p>Inspired by the local landscape and the bridges we build.</p>
         </div>
-    </section>
+        <div class="hat-card">
+            <div style="height:200px; background:#222; border-radius:15px;"></div>
+            <h4>The Listener</h4>
+            <p>Subtle patterns that speak louder than words.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2>LET'S CONNECT</h2>
-        <p>Whether you're a local business in Whatcom County or a neighbor who wants to talk, I'm here to listen.</p>
-        <p style="margin-top: 2rem; color: var(--neon-green);">Find me in Ferndale at local parks or community events!</p>
-        <a href="mailto:tana.hatoverhate@gmail.com" class="email-btn">tana.hatoverhate@gmail.com</a>
-    </section>
+<section id="help">
+    <span class="section-label">Support</span>
+    <div class="support-layout">
+        <div class="support-text">
+            <p style="font-size: 1.5rem; margin-bottom: 2rem;">I need more than six hats to make an impression. To keep painting and connecting, I need to source hats and paint. Paint is expensive, and while I have some, I need finances to keep this <strong>catalyst</strong> running.</p>
+            <p>Every dollar goes directly into materials for the community.</p>
+        </div>
+        <div class="aside-panel">
+            <h3 style="font-family: 'Bungee'; margin-bottom: 1rem;">How to Help</h3>
+            <p>If you can help source hats, donate paint, or provide funding for supplies, please reach out.</p>
+            <a href="mailto:tana.hatoverhate@gmail.com" class="cta-btn">Source Supplies</a>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 Hat over Hate. Hand-painted by Tana in Ferndale, WA.</p>
-        <p style="color: var(--neon-pink); font-weight: 900; margin-top: 1rem;">BRIGHT. COLORFUL. JOYFUL. ART.</p>
-    </footer>
+<footer style="padding: 4rem 10%; border-top: 1px solid #222; text-align: center; color: #666;">
+    <p>© 2026 Hat over Hate. Hand-painted by Tana in Ferndale, WA.</p>
+</footer>
+
 </body>
 </html>
