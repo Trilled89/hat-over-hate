@@ -25,12 +25,11 @@
             background-color: var(--dark-bg);
             color: var(--white);
             font-family: 'Outfit', sans-serif;
-            font-size: 1.4rem; /* Larger base text */
+            font-size: 1.4rem;
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* Fixed Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -52,7 +51,7 @@
             text-decoration: none;
             transition: 0.3s;
         }
-        
+
         .nav-logo:hover {
             color: var(--neon-blue);
             text-shadow: 0 0 15px var(--neon-blue);
@@ -78,12 +77,11 @@
             color: var(--neon-pink);
         }
 
-        /* Layout System - Symmetrical & Balanced */
         section {
             padding: 12rem 10%;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center; /* Center alignment for symmetry */
+            text-align: center;
         }
 
         .section-label {
@@ -100,11 +98,10 @@
             width: 120px;
             height: 4px;
             background: var(--neon-green);
-            margin: 2.5rem auto; /* Centered divider */
+            margin: 2.5rem auto;
             box-shadow: 0 0 10px var(--neon-green);
         }
 
-        /* Hero - Centered Impact */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -133,7 +130,6 @@
             color: #ccc;
         }
 
-        /* Story - Centered Readability */
         .story-container {
             max-width: 900px;
             margin: 0 auto;
@@ -159,7 +155,6 @@
             box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
         }
 
-        /* Philosophy Grid - Perfectly Symmetrical */
         .pillar-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -173,8 +168,9 @@
             border-radius: 40px;
             border: 1px solid #222;
             transition: 0.4s;
+            text-align: left;
         }
-        
+
         .pillar:hover {
             background: rgba(255, 255, 255, 0.05);
             border-color: var(--neon-blue);
@@ -192,7 +188,6 @@
             color: #ddd;
         }
 
-        /* Collection Grid - Responsive Symmetry */
         .collection-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -226,7 +221,6 @@
             color: #aaa;
         }
 
-        /* Support Panel - Wide Symmetrical Layout */
         .support-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -287,24 +281,12 @@
             letter-spacing: 1px;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 1000px) {
-            section {
-                padding: 10rem 5%;
-            }
-            .pillar-grid {
-                grid-template-columns: 1fr;
-                gap: 5rem;
-            }
-            .hero h1 {
-                font-size: clamp(4rem, 18vw, 10rem);
-            }
-            nav ul {
-                display: none;
-            }
-            .aside-panel {
-                padding: 3rem;
-            }
+            section { padding: 10rem 5%; }
+            .pillar-grid { grid-template-columns: 1fr; gap: 5rem; }
+            .hero h1 { font-size: clamp(4rem, 18vw, 10rem); }
+            nav ul { display: none; }
+            .aside-panel { padding: 3rem; }
         }
     </style>
 </head>
@@ -316,88 +298,82 @@
             <li><a href="#voice">Voice</a></li>
             <li><a href="#collection">Collection</a></li>
             <li><a href="#help">Help</a></li>
-            <li><a href="mailto:tana.hatoverhate@gmail.com">Talk</a></li>
         </ul>
+        <a href="mailto:tana.hatoverhate@gmail.com" class="cta-btn" style="padding: 1rem 2rem; font-size: 1.2rem;">Talk</a>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="why">
+    <header class="hero">
         <span class="section-label">A Catalyst in Whatcom</span>
-        <h1>Hat Over <br> Hate</h1>
+        <h1>HAT OVER<br>HATE</h1>
         <p class="hero-subtitle">Supporting Whatcom County one hand-painted conversation at a time.</p>
-        <div class="divider"></div>
-    </section>
+    </header>
 
-    <!-- Story -->
-    <section id="voice">
+    <section id="why">
+        <span class="section-label">The Story</span>
+        <div class="divider"></div>
         <div class="story-container">
-            <span class="section-label">The Story</span>
-            <div class="divider"></div>
             <div class="story-content">
-                <p>Hey, I'm <strong>Tana</strong>. I'm an artist in Ferndale, and I believe that if we can just find community and care about each other, we can stop the polarization.</p>
-                <p>I can't donate money to the movements already doing good work in Whatcom County, but I can paint. I'm not trying to start a movement—I'm trying to be a <strong>catalyst</strong> for the ones already running.</p>
+                <p>Hey, I'm <strong>Tana</strong>. I'm an artist in Ferndale, and I’ve reached a point where I can’t just sit and watch the polarization anymore. I believe that if we can just find community and actually <em>care</em> about each other again, we can stop the bleeding.</p>
+                <p>I don't have a massive bank account to donate to the movements already doing the heavy lifting in Whatcom County, but I have my hands and I have paint. I'm not trying to start something new—I'm trying to be a <strong>catalyst</strong> for the good things already running.</p>
             </div>
             <div class="pull-quote">
-                “It's about going out, having those difficult conversations, and being the one who listens.”
+                “It's about going out, having those difficult conversations, and being the one who finally listens.”
             </div>
         </div>
     </section>
 
-    <!-- Philosophy -->
-    <section id="philosophy">
+    <section id="voice">
         <span class="section-label">Philosophy</span>
         <div class="divider"></div>
         <div class="pillar-grid">
             <div class="pillar">
                 <h3>Stubbornness vs. Listening</h3>
-                <p>People are so divided now. I enjoy hearing both sides because I know beliefs have a source—families, grandmas, history.</p>
+                <p>We all know where our opinions come from. They come from our families, our grandmas, our history, and the things that kept us safe. I’ve realized that I actually <em>enjoy</em> hearing both sides, because every "stubborn" belief has a human source. If we don't listen, we're just shouting at ghosts.</p>
             </div>
             <div class="pillar">
                 <h3>Realizing the Truth</h3>
-                <p>I had to realize things on my own, not because someone taught me, but because someone <strong>listened</strong> to me.</p>
+                <p>I didn't change my mind because someone lectured me or called me names. I changed my thinking because I finally met someone who <strong>listened</strong> to me first. Once I felt heard, my guard dropped, and I finally <em>wanted</em> to understand them too. That’s the only way the truth actually sticks—through a connection, not a correction.</p>
             </div>
         </div>
     </section>
 
-    <!-- Collection -->
     <section id="collection">
         <span class="section-label">Collection</span>
         <div class="divider"></div>
         <div class="collection-grid">
             <div class="hat-card">
                 <h4>Neon Dialogue</h4>
-                <p>A burst of color representing the vibrance of a first meeting.</p>
+                <p>Bold colors and high energy. This is for the person who isn't afraid to be seen and isn't afraid to start the conversation.</p>
             </div>
             <div class="hat-card">
                 <h4>Ferndale Focus</h4>
-                <p>Inspired by the local landscape and the bridges we build.</p>
+                <p>Rooted right here in the county. Inspired by our local landscape and the bridges we're trying to build between neighbors.</p>
             </div>
             <div class="hat-card">
-                <h4>The Listener</h4>
-                <p>Subtle patterns that speak louder than words.</p>
+                <h4>The Opener</h4>
+                <p>Quiet enough to wear to the grocery store, but interesting enough that someone is going to ask you about it. That's the goal.</p>
             </div>
         </div>
     </section>
 
-    <!-- Support -->
     <section id="help">
         <div class="support-container">
             <span class="section-label">Support</span>
             <div class="divider"></div>
             <div class="support-content">
-                <p>I only need six hats to make an impression. To keep painting and connecting, I need to source hats and paint. Paint is expensive, and while I have some, I need finances to keep this <strong>catalyst</strong> running.</p>
-                <p>Every dollar goes directly into materials for the community.</p>
+                <p>Six hats. That's all I need to start making a real impression out there. Hats and paint are the whole operation, and let's be real—high-quality paint is not cheap. Every single dollar goes straight into materials and straight back into the Whatcom community.</p>
+                <p>If this resonates with your heart, help me keep the catalyst running.</p>
             </div>
             <div class="aside-panel">
-                <h3>How to Help</h3>
-                <p>If you can help source hats, donate paint, or provide funding for supplies, please reach out.</p>
-                <a href="mailto:tana.hatoverhate@gmail.com" class="cta-btn">Source Supplies</a>
+                <h3>Get Involved</h3>
+                <p>If you can donate paint, help me source quality hats, or chip in toward supplies, I would love to hear from you. Let's make something together.</p>
+                <a href="mailto:tana.hatoverhate@gmail.com" class="cta-btn">Reach Out</a>
             </div>
         </div>
     </section>
 
     <footer>
-        © 2026 Hat over Hate. Hand-painted by Tana in Ferndale, WA.
+        &copy; 2026 Hat over Hate. Hand-painted with heart by Tana in Ferndale, WA.
     </footer>
 </body>
 </html>
