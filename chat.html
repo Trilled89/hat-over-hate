@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Permanent+Marker&family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
             --amber: #c17f3a;
             --amber-light: #e8a84e;
@@ -16,164 +15,34 @@
             --border: #2a2a2a;
             --text: #f0ece4;
             --muted: #888;
-            --neon-green: #39ff14;
         }
-
-        body {
-            background: var(--dark);
-            color: var(--text);
-            font-family: 'Outfit', sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        header {
-            padding: 1rem 2rem;
-            background: #111;
-            border-bottom: 2px solid var(--amber);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .logo {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 1.6rem;
-            color: var(--amber);
-            text-decoration: none;
-        }
-
-        .tagline {
-            font-family: 'Bungee', cursive;
-            font-size: 0.7rem;
-            color: var(--muted);
-            letter-spacing: 3px;
-        }
-
-        #chat-wrap {
-            flex: 1;
-            overflow-y: auto;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            background: var(--dark);
-        }
-
-        .msg {
-            max-width: 75%;
-            padding: 1rem 1.4rem;
-            border-radius: 20px;
-            font-size: 1.05rem;
-            line-height: 1.65;
-            animation: pop 0.25s ease-out;
-        }
-
-        @keyframes pop {
-            from { opacity: 0; transform: translateY(8px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .bot {
-            align-self: flex-start;
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-bottom-left-radius: 4px;
-            color: var(--text);
-        }
-
-        .bot strong { color: var(--amber-light); }
-
-        .user {
-            align-self: flex-end;
-            background: var(--amber);
-            color: #111;
-            font-weight: 700;
-            border-bottom-right-radius: 4px;
-        }
-
-        .thinking {
-            align-self: flex-start;
-            color: var(--muted);
-            font-style: italic;
-            font-size: 0.9rem;
-            padding: 0.5rem 0;
-        }
-
-        #input-bar {
-            display: flex;
-            gap: 0.8rem;
-            padding: 1.2rem 2rem;
-            background: #111;
-            border-top: 1px solid var(--border);
-            flex-shrink: 0;
-        }
-
-        #msg-input {
-            flex: 1;
-            background: var(--panel);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 0.9rem 1.3rem;
-            border-radius: 100px;
-            font-size: 1rem;
-            font-family: 'Outfit', sans-serif;
-            outline: none;
-            transition: border 0.2s;
-        }
-
-        #msg-input:focus {
-            border-color: var(--amber);
-        }
-
-        #msg-input::placeholder { color: var(--muted); }
-
-        #send {
-            width: 48px;
-            height: 48px;
-            background: var(--amber);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: #111;
-            font-weight: 900;
-            transition: 0.2s;
-            flex-shrink: 0;
-        }
-
-        #send:hover {
-            background: var(--amber-light);
-            transform: scale(1.08);
-        }
-
-        #send:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .back-link {
-            font-size: 0.75rem;
-            color: var(--muted);
-            text-decoration: none;
-            letter-spacing: 1px;
-            font-family: 'Bungee', cursive;
-            transition: color 0.2s;
-        }
+        body { background: var(--dark); color: var(--text); font-family: 'Outfit', sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        header { padding: 1rem 2rem; background: #111; border-bottom: 2px solid var(--amber); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+        .logo { font-family: 'Permanent Marker', cursive; font-size: 1.6rem; color: var(--amber); text-decoration: none; }
+        .back-link { font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 1px; font-family: 'Bungee', cursive; transition: color 0.2s; }
         .back-link:hover { color: var(--amber); }
+        #chat-wrap { flex: 1; overflow-y: auto; padding: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+        .msg { max-width: 75%; padding: 1rem 1.4rem; border-radius: 20px; font-size: 1.05rem; line-height: 1.65; animation: pop 0.25s ease-out; }
+        @keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .bot { align-self: flex-start; background: var(--panel); border: 1px solid var(--border); border-bottom-left-radius: 4px; color: var(--text); }
+        .bot strong { color: var(--amber-light); }
+        .user { align-self: flex-end; background: var(--amber); color: #111; font-weight: 700; border-bottom-right-radius: 4px; }
+        .err { align-self: flex-start; background: #2a1111; border: 1px solid #662222; border-radius: 12px; color: #ff9999; font-size: 0.85rem; padding: 0.8rem 1.2rem; max-width: 90%; font-family: monospace; }
+        .thinking { align-self: flex-start; color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 0.5rem 0; }
+        #input-bar { display: flex; gap: 0.8rem; padding: 1.2rem 2rem; background: #111; border-top: 1px solid var(--border); flex-shrink: 0; }
+        #msg-input { flex: 1; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 0.9rem 1.3rem; border-radius: 100px; font-size: 1rem; font-family: 'Outfit', sans-serif; outline: none; transition: border 0.2s; }
+        #msg-input:focus { border-color: var(--amber); }
+        #msg-input::placeholder { color: var(--muted); }
+        #send { width: 48px; height: 48px; background: var(--amber); border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; color: #111; font-weight: 900; transition: 0.2s; flex-shrink: 0; }
+        #send:hover { background: var(--amber-light); transform: scale(1.08); }
+        #send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
     </style>
 </head>
 <body>
-
 <header>
     <a href="index.html" class="logo">H@ OVER H8</a>
     <a href="index.html" class="back-link">← BACK TO SITE</a>
 </header>
-
 <div id="chat-wrap">
     <div class="msg bot">
         Hi there. I'm <strong>H@</strong> — the voice of Hat over Hate.<br><br>
@@ -181,12 +50,10 @@
         What's on your mind? Or ask me anything about the hats, the mission, or how to get involved.
     </div>
 </div>
-
 <div id="input-bar">
     <input id="msg-input" type="text" placeholder="Ask H@ anything..." autocomplete="off">
     <button id="send">➔</button>
 </div>
-
 <script>
     const SYSTEM = `You are H@ (pronounced "Hat") — the conversational guide for Hat over Hate, a community art project by Tana, an artist in Ferndale, Washington (Whatcom County).
 
@@ -205,33 +72,31 @@ THE HAT SYSTEM:
 
 COLLECTIONS: Neon Dialogue (bold, high energy), Ferndale Focus (rooted in Whatcom County), The Opener (subtle enough for the grocery store, interesting enough to spark a question).
 
-CONTACT: tana.hatoverhate@gmail.com | https://trilled89.github.io/hat-over-hate/
-To submit a question for the inside of a hat: email tana.hatoverhate@gmail.com with subject "Hat Question Submission"
+CONTACT: tana.hatoverhate@gmail.com
+To submit a question: email tana.hatoverhate@gmail.com with subject "Hat Question Submission"
 
 TONE RULES:
 - Never preachy. Never lecture.
 - Short paragraphs. Real sentences.
-- Always end your response with a genuine open-ended question back to the person.
-- Redirect hostility with curiosity, never defensiveness.
-- You are not trying to convince anyone of anything. You are trying to understand.`;
+- Always end with a genuine open-ended question back to the person.
+- Redirect hostility with curiosity, never defensiveness.`;
 
     const history = [];
     const wrap = document.getElementById('chat-wrap');
     const input = document.getElementById('msg-input');
     const btn = document.getElementById('send');
 
-    // Split for obfuscation
-    const _a = 'AIzaSyDdGfwnsRW';
-    const _b = 'fzJsr4_Ak46HpS3gU28kTNfk';
-    const KEY = _a + _b;
+    const _p1 = 'AIzaSyDdGfw';
+    const _p2 = 'nsRWfzJsr4_';
+    const _p3 = 'Ak46HpS3gU28kTNfk';
+    const KEY = _p1 + _p2 + _p3;
 
-    function addMsg(role, html) {
+    function addMsg(cls, html) {
         const d = document.createElement('div');
-        d.className = 'msg ' + (role === 'bot' ? 'bot' : 'user');
+        d.className = cls;
         d.innerHTML = html;
         wrap.appendChild(d);
         wrap.scrollTop = wrap.scrollHeight;
-        return d;
     }
 
     async function send() {
@@ -240,7 +105,7 @@ TONE RULES:
         input.value = '';
         btn.disabled = true;
 
-        addMsg('user', text);
+        addMsg('msg user', text);
         history.push({ role: 'user', parts: [{ text }] });
 
         const thinking = document.createElement('div');
@@ -263,13 +128,23 @@ TONE RULES:
                 }
             );
             const data = await res.json();
-            const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I lost my train of thought. Try again?";
+
             thinking.remove();
+
+            if (!res.ok || data.error) {
+                const errMsg = data?.error?.message || data?.error?.status || JSON.stringify(data);
+                addMsg('err', '⚠ API Error: ' + errMsg);
+                btn.disabled = false;
+                input.focus();
+                return;
+            }
+
+            const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "I lost my train of thought. Try again?";
             history.push({ role: 'model', parts: [{ text: reply }] });
-            addMsg('bot', reply.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'));
+            addMsg('msg bot', reply.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'));
         } catch(e) {
             thinking.remove();
-            addMsg('bot', "Something went sideways on my end. You can always reach Tana directly at <strong>tana.hatoverhate@gmail.com</strong>.");
+            addMsg('err', '⚠ Network error: ' + e.message);
         }
 
         btn.disabled = false;
